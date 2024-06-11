@@ -12,11 +12,11 @@ function openConnection() {
     if (!$connection) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    echo "MySQL connection successfull";
+    #echo "MySQL connection successfull";
     return $connection;
 }
 
-function closeConnection() {
+function closeConnection($connection) {
     mysqli_close($connection);
 }
 
