@@ -1,0 +1,29 @@
+/* By Jycko */
+.footerstyle {
+    display: flex;
+    justify-content: space-evenly;
+}
+.footertstyle h4 {
+    border-bottom: 2px solid black;
+    
+}
+.footerstyle p {
+    color: rgb(50, 49, 49);
+}
+.footerstyle a:hover {
+    color: white;
+}
+.footerstyle a {
+    text-decoration: none;
+    display: block;
+}
+.footerstyle div {
+    max-width: 180px;
+}
+footer {
+    padding-left: 10px;
+    padding-right: 20px;
+    color: black;
+    background-color: lightblue;
+    text-align: center;
+}
