@@ -5,8 +5,12 @@ include 'php/db_connect.php';
 
 <html>
 <head>
-    <title>Book Sharing App MMU</title>
+    <title>Book Sharings App MMU</title>
 </head>
+<?php
+include "php/footer.php"; // Insert footer
+?>
 <body>
+    
 </body>
 </html>

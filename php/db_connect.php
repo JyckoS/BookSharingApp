@@ -1,6 +1,6 @@
 <?php
 $connection = null;
-
+// by jycko
 function openConnection() {
     global $connection;
     if ($connection != NULL) return $connection;
