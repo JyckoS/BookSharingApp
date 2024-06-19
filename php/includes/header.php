@@ -8,10 +8,24 @@
     </head>
     <body>
         <header>
+            <div class = "topnav">
+                <a href = "index.php"> Home </a>
+                <a href = "#search"> Search Books </a>
+                <a href = "#loan"> Loan Books </a>
+                <a href = "registration.php"> Register Account </a>
+                <a href = "login.php"> Log In </a>
+            </div>
+
             <div class="headerstyle">
                 <div>
-                    <img src="../images/mmu_logo.png" alt="Logo">
-                    <a href="actions/process_logout.php">Logout</a>
+                    <?php
+                    $filename =  basename($_SERVER['PHP_SELF']);
+                    if ($filename == "index.php" || $filename == "registration.php" || $filename == "login.php") {
+                        echo '<img src="../images/mmu_logo.png" alt="Logo">';
+                        return;
+                    }
+                    echo '<img src="../images/mmu_logo.png" alt="Logo">';
+                    ?>
                 </div>
             </div>
             <!-- Login button later -->
