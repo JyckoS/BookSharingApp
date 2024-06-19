@@ -12,7 +12,7 @@ function openConnection() {
     if (!$connection) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    #echo "MySQL connection successfull";
+    #echo "MySQL connection successful";
     return $connection;
 }
 
