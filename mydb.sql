@@ -98,9 +98,10 @@ INSERT INTO `faq` (`QuestionID`, `StudentID`, `Content`, `Answer`) VALUES
 --
 
 CREATE TABLE `feedback` (
-  `FeedbackID` int(11) NOT NULL,
+  `FeedbackID` int(11) NOT NULL AUTO_INCREMENT,
   `StudentID` varchar(30) NOT NULL,
-  `Content` text NOT NULL
+  `Content` text NOT NULL,
+  PRIMARY KEY (`FeedbackID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

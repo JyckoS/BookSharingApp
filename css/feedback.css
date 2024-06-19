@@ -1,0 +1,43 @@
+/* Made by Jycko  */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.feedbackform{
+    flex: 1;
+    min-height: 100%;
+    background-color: beige;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+a {
+    padding-top: 10px;
+    color: greenyellow;
+}
+label {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+textarea {
+    font-size: 15px;
+    min-height: 40vh;
+}
+input[type="submit"] {
+    background-color: darksalmon;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin-top: 15px;
+    min-height: 20px;
+}
+input[type="submit"]:hover {
+    background-color: lightgoldenrodyellow;
+}

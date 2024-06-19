@@ -22,6 +22,8 @@
                 <a href="../index.php">Home</a>
                 <a href="aboutus.php">About Us</a>
                 <a href="faq.php">FAQs</a>
+                <a href="feedback.php">Send Feedback</a>
+
             </div>
 
 
