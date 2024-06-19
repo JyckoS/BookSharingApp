@@ -5,21 +5,24 @@
     text-align: left;
 }
 .footerstyle h4 {
+    font-size: 20px;
+    font-weight: none;
     min-height: 20px;
     margin-bottom: 10px;
     /* padding-bottom: 10px; */
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid beige; */
     
 }
 .footerstyle p {
     align-self: center;
-    color: rgb(50, 49, 49);
+    color: rgb(189, 186, 186);
 }
 .footerstyle a:hover {
     font-weight: bold;
-    color: white;
+    color: yellow;
 }
 .footerstyle a {
+    color: rgb(225, 221, 221);
     text-decoration: none;
     display: block;
 }
@@ -31,14 +34,20 @@
 
 }
 .copyright {
-    padding-top: 20px;
+    padding-top: 30px;
     
 
 }
 footer {
-    border-top: 5px solid lightskyblue;
-    padding-right: 20px;
-    color: black;
-    background-color: lightcyan;
+    width: 100%;
+    background-image: url('../images/background.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+   /* border-top: 5px solid lightskyblue; */
+    color: white;
+    /* background-color: lightcyan; */
     text-align: center;
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.35); 
+
 }

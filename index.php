@@ -7,10 +7,13 @@ include 'php/db_connect.php';
 <head>
     <title>Book Sharings App MMU</title>
 </head>
-<?php
-include "php/footer.php"; // Insert footer
-?>
+
 <body>
-    
+<?php
+include "php/includes/header.php"; // Insert footer
+?>
+<?php
+include "php/includes/footer.php"; // Insert footer
+?>
 </body>
 </html>

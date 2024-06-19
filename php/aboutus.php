@@ -4,7 +4,9 @@
         <title>MMU Book Sharing - About Us</title>
     </head>
     <body>
-
+        <?php 
+        include "includes/header.php";
+        ?>
         <!-- TITLE -->
         <div>
             <h1>MMU Book Sharing</h1>
@@ -36,7 +38,7 @@
 
         </article>
         <?php
-        include "footer.php";
+        include "includes/footer.php";
         ?>
     </body>
 </html>

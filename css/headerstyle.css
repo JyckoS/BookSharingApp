@@ -1,0 +1,15 @@
+header {
+    padding-top: 10px;
+    padding-left: 10px;
+    box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.35); 
+}
+.headerstyle {
+    display: flex;
+
+}
+.headerstyle img {
+    max-height: 50px;
+}
+body {
+    margin: 0;
+}
