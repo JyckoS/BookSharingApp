@@ -2,15 +2,21 @@
 .footerstyle {
     display: flex;
     justify-content: space-evenly;
+    text-align: left;
 }
-.footertstyle h4 {
+.footerstyle h4 {
+    min-height: 20px;
+    margin-bottom: 10px;
+    /* padding-bottom: 10px; */
     border-bottom: 2px solid black;
     
 }
 .footerstyle p {
+    align-self: center;
     color: rgb(50, 49, 49);
 }
 .footerstyle a:hover {
+    font-weight: bold;
     color: white;
 }
 .footerstyle a {
@@ -18,10 +24,19 @@
     display: block;
 }
 .footerstyle div {
+    min-height: 130px;
+    padding-right: 20px;
+    align-self: center;
     max-width: 180px;
+
+}
+.copyright {
+    padding-top: 20px;
+    
+
 }
 footer {
-    padding-left: 10px;
+    border-top: 5px solid lightskyblue;
     padding-right: 20px;
     color: black;
     background-color: lightblue;
