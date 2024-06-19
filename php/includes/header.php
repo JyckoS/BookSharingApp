@@ -10,14 +10,8 @@
         <header>
             <div class="headerstyle">
                 <div>
-                    <?php
-                    $filename =  basename($_SERVER['PHP_SELF']);
-                    if ($filename == "index.php") {
-                        echo '<img src="images/mmu_logo.png" alt="Logo">';
-                        return;
-                    }
-                    echo '<img src="../images/mmu_logo.png" alt="Logo">';
-                    ?>
+                    <img src="../images/mmu_logo.png" alt="Logo">
+                    
                 </div>
             </div>
             <!-- Login button later -->
