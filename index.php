@@ -1,5 +1,11 @@
 <?php
+// Made by Jycko
 include 'php/db_connect.php';
+
+session_start();
+if (!isset($_SESSION["userid"])) {
+    header("Location: php/login.php");
+}
 ?>
 <!DOCTYPE html>
 
@@ -7,14 +13,15 @@ include 'php/db_connect.php';
 <head>
     <link rel="stylesheet" href="css/footerstyle.css">
     <link rel="stylesheet" href="css/headerstyle.css">
-    <title>Book Sharingss App MMU</title>
+    <title>Book Sharings App MMU</title>
 </head>
 <body>
 <header>
             <div class="headerstyle">
                 <div>
                     <img src="images/mmu_logo.png" alt="Logo">
-                    
+                    <a href="php/actions/process_logout.php">Logout</a>
+
                 </div>
             </div>
             <!-- Login button later -->

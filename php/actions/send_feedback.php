@@ -6,6 +6,7 @@ $conn = openConnection();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studentid = $_POST["studentid"];
     $message = $_POST["message"];
+    $message = mysqli_real_escape_string($conn, $message);
     if (empty($message) || empty($studentid)) {
         echo "Missing fields, exiting";
         exit;

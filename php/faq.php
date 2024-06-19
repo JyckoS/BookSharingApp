@@ -1,4 +1,12 @@
 <?php
+
+
+session_start();
+if (!isset($_SESSION["userid"])) {
+    header("Location: login.php");
+}
+?>
+<?php
 require_once 'db_connect.php';
 $conn = openConnection();
 ?>
