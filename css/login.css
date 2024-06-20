@@ -1,0 +1,47 @@
+.loginform {
+    padding-top: 15vh;
+   width: 100%;
+   text-align: center;
+    /* display: flex;
+    flex-direction: column; */
+}
+.loginform img {
+
+    max-width: 500px;
+}
+body {
+    background: lightblue;
+
+    background-image: url("../images/loginwallpaper.jpg");
+    width: 100%;
+
+}
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+}
+form {
+    margin: 0 auto;
+    max-width: 300px;
+    /* background-color: yellow; */
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    height: 20px;
+    margin-bottom: 3vh;
+    width: 300px;
+    margin: 0 auto;
+}
+input[type="submit"] {
+    height: 40px;
+    margin-top: 7vh;
+    background-color: lightskyblue;
+    color: white;
+    font-size: 20px;
+}

@@ -3,13 +3,15 @@
 <html>
     <head>
         <title>Login - MMU Book Sharing</title>
+        <link rel="stylesheet" href="../css/login.css">
     </head>
     <body>
         <!-- Custom header because they havent logged in -->
         <header>
 
         </header>
-        <div>
+        <div class="loginform">
+            <img src="../images/mmu_logo.png" alt="logo">
             <?php
 
             if (isset($_GET["message"])) {
@@ -33,6 +35,7 @@
                 <input type="submit" value="Login">
 
             </form>
+            <p>Not registered? </p><a href="registration.php">Click me to register</a>
         </div>
         <!-- Custom footer because they havent logged in -->
         <footer>
