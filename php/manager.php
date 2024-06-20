@@ -1,40 +1,57 @@
 <?php
-
 session_start();
 if (!isset($_SESSION["userid"])) {
     header("Location: login.php");
+    exit;
 }
-?>
-<?php
-require_once 'db_connect.php';
-$conn = openConnection();
+
+require 'db_connect.php';
+$connection = openConnection();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Manager Panel</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/footerstyle.css">
+    <link rel="stylesheet" href="../css/headerstyle.css">
+    <link rel="stylesheet" href="../css/button.css"> 
+    <title>Manager Panel - Book Sharings App MMU</title>
 </head>
 <body>
+<header>
+    <div class="headerstyle">
+        <div>
+            <img src="../images/mmu_logo.png" alt="Logo">
+            <a href="actions/process_logout.php">Logout</a>
+        </div>
+    </div>
+</header>
+<div class="content">
     <h2>Welcome, Manager!</h2>
-    <a href="php/actions/process_logout.php">Logout</a>
-    <h3>Manage Records</h3>
-    <ul>
-        <li><a href="manage_books.php">Manage Books</a></li>
-        <li><a href="manage_borrow.php">Manage Borrow</a></li>
-        <li><a href="manage_faq.php">Manage FAQ</a></li>
-        <li><a href="manage_feedback.php">Manage Feedback</a></li>
-        <li><a href="manage_forum_post.php">Manage Forum Posts</a></li>
-        <li><a href="manage_forum_request.php">Manage Forum Requests</a></li>
-        <li><a href="manage_loan.php">Manage Loans</a></li>
-        <li><a href="manage_manager.php">Manage Managers</a></li>
-        <li><a href="manage_review.php">Manage Reviews</a></li>
-        <li><a href="manage_students.php">Manage Students</a></li>
-    </ul>
+    <div class="button-container">
+        <a href="manage_borrow.php" class="square-button">Manage Borrow</a>
+        <a href="manage_loan.php" class="square-button">Manage Loans</a>
+    </div>
+</div>
+<footer>
+    <div class="footerstyle">
+        <div>
+            <h4>MMU Book Sharing</h4>
+            <p>We help MMU Students to share and exchange books.</p>
+        </div>
+        <div>
+            <h4>Navigation</h4>
+            <a href="../index.php">Home</a>
+            <a href="aboutus.php">About Us</a>
+            <a href="faq.php">FAQs</a>
+        </div>
+        <div>
+            <p class="copyright">&copy; MMU Book Sharing. All rights belong to MMU.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
 <?php
 closeConnection($connection);
 ?>
-
