@@ -18,14 +18,9 @@ $connection = openConnection();
     <title>Manager Panel - Book Sharings App MMU</title>
 </head>
 <body>
-<header>
-    <div class="headerstyle">
-        <div>
-            <img src="../images/mmu_logo.png" alt="Logo">
-            <a href="actions/process_logout.php">Logout</a>
-        </div>
-    </div>
-</header>
+<?php
+    include "includes/header.php";
+?>
 <div class="content">
     <h2>Welcome, Manager!</h2>
     <div class="button-container">

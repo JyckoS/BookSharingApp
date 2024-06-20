@@ -40,14 +40,9 @@ $total_pages = ceil($total_records / $limit);
     <title>Manage Borrow - Book Sharings App MMU</title>
 </head>
 <body>
-<header>
-    <div class="headerstyle">
-        <div>
-            <img src="../images/mmu_logo.png" alt="Logo">
-            <a href="actions/process_logout.php">Logout</a>
-        </div>
-    </div>
-</header>
+<?php
+    include "includes/header.php";
+?>
 <div class="content">
     <h2>Manage Borrow</h2>
     <a href="manager.php" class="button">Back</a>

@@ -1,6 +1,5 @@
 <?php
 // Made by Jycko
-include 'php/db_connect.php';
 
 session_start();
 if (!isset($_SESSION["userid"])) {
@@ -8,12 +7,6 @@ if (!isset($_SESSION["userid"])) {
     exit;
 }
 
-$connection = openConnection();
-
-$userId = $_SESSION["userid"];
-$sql = "SELECT UserType FROM manager WHERE ManagerID='$userId'";
-$result = mysqli_query($connection, $sql);
-$user = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,19 +16,55 @@ $user = mysqli_fetch_assoc($result);
     <title>Book Sharings App MMU</title>
 </head>
 <body>
-<header>
-    <div class="headerstyle">
-        <div>
+<?php
+require_once 'php/db_connect.php';;
+$conn = openConnection();
+?>
+
+<?php
+$userId = $_SESSION['userid'] ?? null;
+$userType = null;
+
+if ($userId) {
+    $sql = "SELECT UserType FROM manager WHERE ManagerID = '$userId'";
+    $result = mysqli_query($connection, $sql);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
+        $userType = $user['UserType'];
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/headerstyle.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerstyle">
             <img src="images/mmu_logo.png" alt="Logo">
-            <a href="php/actions/process_logout.php">Logout</a>
+            <div class="topnav">
+                <a href="../index.php">Home</a>
+                <a href="#search">Search Books</a>
+                <a href="#loan">Loan Books</a>
+                <a href="forum_list.php">Request Books</a>
+
+                <!-- Conditionally display Manager Function link -->
+                <?php if ($userType === 'MANAGER') { ?>
+                    <a href="php/manager.php">Manager Function</a>
+                <?php } ?>
+
+                <a href="actions/process_logout.php">Logout</a>
+            </div>
         </div>
-    </div>
-</header>
-<div>
-    <?php if ($user['UserType'] == 'MANAGER') { ?>
-        <a href="php/manager.php">Manager Panel</a>
-    <?php } ?>
-</div>
+    </header>
+</body>
+
+</html>
+
 <footer>
     <div class="footerstyle">
         <div>
