@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 20, 2024 at 04:12 PM
+-- Generation Time: Jun 20, 2024 at 06:36 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -139,17 +139,18 @@ CREATE TABLE `forum_request` (
   `StudentID` varchar(30) DEFAULT NULL,
   `Title` varchar(255) DEFAULT NULL,
   `Author` varchar(255) DEFAULT NULL,
-  `RequestDate` date DEFAULT NULL,
+  `RequestDate` timestamp NULL DEFAULT current_timestamp(),
   `Status` enum('CLOSED','OPEN') DEFAULT NULL,
-  `ForumPosts` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`ForumPosts`))
+  `ForumPosts` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`ForumPosts`)),
+  `image_base64` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `forum_request`
 --
 
-INSERT INTO `forum_request` (`RequestID`, `StudentID`, `Title`, `Author`, `RequestDate`, `Status`, `ForumPosts`) VALUES
-(1232, '1191202266', 'Requesting Book of Math 101: Calculus for Beginners', 'IGCSCE Book', '2024-05-25', 'CLOSED', '[1234]');
+INSERT INTO `forum_request` (`RequestID`, `StudentID`, `Title`, `Author`, `RequestDate`, `Status`, `ForumPosts`, `image_base64`) VALUES
+(1232, '1191202266', 'Requesting Book of Math 101: Calculus for Beginners', 'IGCSCE Book', '2024-05-24 16:00:00', 'CLOSED', '[1234]', '');
 
 -- --------------------------------------------------------
 

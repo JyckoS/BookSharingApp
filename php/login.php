@@ -24,7 +24,9 @@
                 }
                 else if ($msgtype == "invalidpw") {
                     $message = "You have entered a wrong password.";
-                } 
+                }  else if ($msgtype == "notloggedin") {
+                    $message = "You need to log in to do that!";
+                }
 
                 echo "$message";
             }

@@ -1,7 +1,19 @@
 /* Made by Jycko */
+.forum {
+    background-color: beige;
+}
+.forum h1 {
+    color: gray;
+}
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 
+}
+table tbody tr td img {
+    width: 100px;
+    height: 100px;
+    max-height: 100px;
+    max-width: 100px;
 }

@@ -1,4 +1,5 @@
 <?php
+
 $connection = null;
 // Made by Jycko
 function openConnection() {
