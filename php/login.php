@@ -12,8 +12,10 @@
         </header>
         <div class="loginform">
             <img src="../images/mmu_logo.png" alt="logo">
+            <br>
+            <a>
             <?php
-
+            
             if (isset($_GET["message"])) {
                 $msgtype = $_GET["message"];
                 $message = $msgtype;
@@ -24,9 +26,10 @@
                     $message = "You have entered a wrong password.";
                 } 
 
-                echo "<a> $message </a>";
+                echo "$message";
             }
             ?>
+            </a>
             <form action="actions/process_login.php" method="post">
                 <label for="username">UserID</label>
                 <input type="text" id="userid" name="userid" required>
