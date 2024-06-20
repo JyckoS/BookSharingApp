@@ -76,6 +76,7 @@ if ($userId) {
             <a href="index.php">Home</a>
             <a href="php/aboutus.php">About Us</a>
             <a href="php/faq.php">FAQs</a>
+            <a href="php/feedback.php">Send Feedback</a>
         </div>
         <div>
             <p class="copyright">&copy; MMU Book Sharing. All rights belongs to MMU.</p>
