@@ -1,0 +1,50 @@
+
+body{
+    margin: 0;
+    
+}
+
+input[type = text], input[type = email], input[type = password] {
+    /*font-size: 40px;*/
+    height: 30px;
+    width: 250px;
+}
+
+input[type = submit]{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(39, 75, 192);
+    text-decoration: none;
+    width: 25%;
+    margin-left: 150px;
+    border:none;
+    cursor: pointer;
+    padding: 16px ;
+}
+
+form 
+{
+    text-align: center;
+    margin-left: 40px;
+}
+
+label
+{
+    color: rgb(65, 66, 75);
+    font-weight: bold;
+    
+}
+
+.register {
+    margin-left: 20px;
+    color: rgb(39, 75, 192);
+
+}
+
+.formRegister {
+    margin-left: 100px;
+    margin-right: 100px;
+    border: solid 2px lightgrey;
+    border-radius: 5px;
+}
+
