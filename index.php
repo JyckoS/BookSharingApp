@@ -47,10 +47,10 @@ if ($userId) {
         <div class="headerstyle">
             <img src="images/mmu_logo.png" alt="Logo">
             <div class="topnav">
-                <a href="../index.php">Home</a>
+                <a href="index.php">Home</a>
                 <a href="#search">Search Books</a>
                 <a href="#loan">Loan Books</a>
-                <a href="forum_list.php">Request Books</a>
+                <a href="php/forum_list.php">Request Books</a>
 
                 <!-- Conditionally display Manager Function link -->
                 <?php if ($userType === 'MANAGER') { ?>
