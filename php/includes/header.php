@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- Made by jycko -->
+<!-- Made by jycko & batrisyia -->
 
 <head>
     <link rel="stylesheet" href="../css/headerstyle.css">
