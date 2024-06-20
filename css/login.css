@@ -27,9 +27,6 @@ label {
 }
 a {
     font-size: 20px;
-    color: red;
-    border-bottom: 1px solid black;
-    background-color: white;
 }
 form {
     margin: 0 auto;
