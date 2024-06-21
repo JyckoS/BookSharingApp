@@ -4,6 +4,7 @@
     <head>
         <title> MMU's Book Sharing Center: Register Now</title>
         <link rel = "stylesheet" type = "text/css" href = "../css/registration.css?v=<?php echo time(); ?>"/>
+        <script src="../scripts/validate_register.js"> </script>
     </head>
     <body>
 
@@ -38,7 +39,7 @@
 
             }
             ?>
-            <form action = "actions/process_register.php" method="post">
+            <form onsubmit="validatePassword();" action = "actions/process_register.php" method="post">
                 <p><label for = "studentID"> Student ID </label></p>
                 <p><input type = "text" id = "userID" name = "userID" placeholder = "Enter Student ID" required/></p>
 

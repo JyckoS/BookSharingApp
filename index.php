@@ -57,7 +57,7 @@ if ($userId) {
                     <a href="php/manager.php">Manager Function</a>
                 <?php } ?>
 
-                <a href="actions/process_logout.php">Logout</a>
+                <a href="php/actions/process_logout.php">Logout</a>
             </div>
         </div>
     </header>
