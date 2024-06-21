@@ -1,7 +1,8 @@
 <?php
+// Made by Jycko
+
 require_once "../db_connect.php";
 $conn = openConnection();
-// Made by Jycko
 // Use student ID from the post["studentid"]
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studentid = $_POST["studentid"];
