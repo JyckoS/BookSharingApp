@@ -1,0 +1,77 @@
+/* Made BY JYCKO */
+body {
+ 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;   
+}
+.faq p {
+    text-align: center;
+}
+.faq h1 {
+    text-align: center;
+    color: rgb(67, 66, 66);
+}
+
+.faq h2 {
+    text-decoration: underline;
+    text-align: center;
+    color: #454343;
+}
+
+.faq article {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq article h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #6c6b6b;
+}
+
+.faq article p {
+    text-align: center;
+    color: lightslategray;
+}
+.faq{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.faq form {
+    align-self: center;
+    margin: 0px auto;
+    width: 50%;
+    background: white;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq form textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.faq form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.faq form button:hover {
+    background-color: #4cae4c;
+}

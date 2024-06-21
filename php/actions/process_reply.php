@@ -1,7 +1,6 @@
 <!-- MADE BY JYCKO -->
 <?php
 require_once "../db_connect.php";
-echo 'bb';
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: ../forum_list.php?message=error");
