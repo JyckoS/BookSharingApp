@@ -9,12 +9,31 @@
 
         <!--Navigation-->
         
-        <?php include 'includes/header.php';?>
+        <?php
+        //  include 'includes/header.php';?>
 
         <div class = "formRegister">
 
             <h2 class = "register"> Registration </h1>
-            
+            <?php
+            $message = $_GET["message"];
+
+            if (isset($message) && !empty($message)) {
+                $status = "Error";
+                switch ($message) {
+                    case "idexist":
+                        $status = "That student id already existed.";
+                        break;
+                    case "mailexist":
+                        $status = "That mail is already registered.";
+                        break;
+                    default:
+                        break;
+                }
+                echo "<a>$status</a>";
+
+            }
+            ?>
             <form action = "db_connect.php" method = "post" novalidate>
                 <p><label for = "studentID"> Student ID </label></p>
                 <p><input type = "text" id = "userID" name = "userID" placeholder = "Enter Student ID" required/></p>
@@ -36,11 +55,12 @@
             </form>
         <div>
         <footer>
-            <?php include "includes/footer.php"; ?>
+            <?php
+            //  include "includes/footer.php"; ?>
         </footer>
         
     </body>
     
 </html>
 
-/* made by batrisyia */
+<!-- /* made by batrisyia */ -->

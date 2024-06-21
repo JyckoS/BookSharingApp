@@ -20,9 +20,9 @@
             <div>
                 <h4>Navigation</h4>
                 <a href="../index.php">Home</a>
-                <a href="php/aboutus.php">About Us</a>
-                <a href="php/faq.php">FAQs</a>
-                <a href="php/feedback.php">Send Feedback</a>
+                <a href="aboutus.php">About Us</a>
+                <a href="faq.php">FAQs</a>
+                <a href="feedback.php">Send Feedback</a>
 
             </div>
 
