@@ -19,13 +19,20 @@
             if (isset($_GET["message"])) {
                 $msgtype = $_GET["message"];
                 $message = $msgtype;
-                if ($msgtype == "invalidid") {
-                    $message = "That username is invalid. Make sure case sensitivity is correct.";
-                }
-                else if ($msgtype == "invalidpw") {
-                    $message = "You have entered a wrong password.";
-                }  else if ($msgtype == "notloggedin") {
-                    $message = "You need to log in to do that!";
+                switch ($msgtype) {
+                    case "invalidid":
+                        $message = "That username is invalid. Make sure case sensitivity is correct.";
+                        break;
+                    case "invalidpw":
+                        $message = "You have entered a wrong password.";
+                        break;
+                    case "notloggedin":
+                        $message = "You need to log in to do that!";
+                        break;
+                    case "registered":
+                        $message = "Successfully registered. Please login!";
+                        break;
+
                 }
 
                 echo "$message";

@@ -28,13 +28,14 @@
                         $status = "That mail is already registered.";
                         break;
                     default:
+                        $status= "Error occured";
                         break;
                 }
                 echo "<a>$status</a>";
 
             }
             ?>
-            <form action = "db_connect.php" method = "post" novalidate>
+            <form action = "actions/process_register.php" method = "post" novalidate>
                 <p><label for = "studentID"> Student ID </label></p>
                 <p><input type = "text" id = "userID" name = "userID" placeholder = "Enter Student ID" required/></p>
 
