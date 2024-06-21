@@ -1,15 +1,23 @@
 <!-- Made by Jycko -->
 <?php
 require_once "../db_connect.php";
-if (!$_SERVER["REQUEST_METHOD"] != "POST") {
+
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    header("Location: ../registration.php?message=error");
+
     exit;
 }
+
 if (!isset($_POST["userID"])
 || !isset($_POST["fullName"])
 || !isset($_POST["email"])
 || !isset($_POST["password"])
 || !isset($_POST["passwordConfirmation"])) {
-    header("Location: ../registration.php?message=error");
+    header("Location: ../registration.php?message=errorx");
+    exit;
+}
+if ($_POST["password"] !== $_POST["passwordConfirmation"]) {
+    header("Location: ../registration.php?message=passwordmismatch");
     exit;
 }
 session_start();
@@ -38,13 +46,14 @@ $password = $_POST["password"];
 $query = "INSERT INTO students 
 (StudentID, Name, Email, Password, UserType)
  VALUES 
- '$studentid', '$fullname', '$email', '$password', 'STUDENT' 
+ ('$studentid', '$fullname', '$email', '$password', 'STUDENT')
  ";
  $insert = mysqli_query($conn, $query);
  if (!$insert) {
     header("Location: ../registration.php?message=error2");
     exit;
  }
+
  header("Location: ../login.php?message=registered");
  exit;
 ?>

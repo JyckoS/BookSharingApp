@@ -27,6 +27,9 @@
                     case "mailexist":
                         $status = "That mail is already registered.";
                         break;
+                    case "passwordmismatch":
+                        $status = "Confirm password is wrong";
+                        break;
                     default:
                         $status= "Error occured";
                         break;
@@ -35,7 +38,7 @@
 
             }
             ?>
-            <form action = "actions/process_register.php" method = "post" novalidate>
+            <form action = "actions/process_register.php" method="post">
                 <p><label for = "studentID"> Student ID </label></p>
                 <p><input type = "text" id = "userID" name = "userID" placeholder = "Enter Student ID" required/></p>
 
