@@ -19,15 +19,13 @@ if (!isset($_SESSION["userid"])) {
 <?php
 require_once 'php/db_connect.php';;
 $conn = openConnection();
-?>
 
-<?php
 $userId = $_SESSION['userid'] ?? null;
 $userType = null;
 
 if ($userId) {
     $sql = "SELECT UserType FROM manager WHERE ManagerID = '$userId'";
-    $result = mysqli_query($connection, $sql);
+    $result = mysqli_query($conn, $sql);
     if ($result && mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
         $userType = $user['UserType'];
