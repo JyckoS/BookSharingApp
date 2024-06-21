@@ -10,8 +10,8 @@ if (!isset($_SESSION["userid"])) {
 <!-- Made by Jycko -->
 <html>
     <head>
-        <title>Request Books - MMU Book Sharing</title>
-        <link rel="stylesheet" href="../css/forumlist.css">
+        <title>Request Bookss - MMU Book Sharing</title>
+        <link rel="stylesheet" href="../css/forum_list.css">
     </head>
     <body>
         <?php
