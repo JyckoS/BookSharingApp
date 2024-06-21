@@ -34,12 +34,12 @@ while ($row = mysqli_fetch_assoc($result)) {
         exit;
     }
 }
-$studentid = $_POST["userID"];
-$fullname = $_POST["fullName"];
+$studentid = mysqli_real_escape_string($conn, $_POST["userID"]);
+$fullname = mysqli_real_escape_string($conn, $_POST["fullName"]);
 
-$email = $_POST["email"];
+$email = mysqli_real_escape_string($conn, $_POST["email"]);
 
-$password = $_POST["password"];
+$password = mysqli_real_escape_string($conn, $_POST["password"]);
 
 
 // email and userid are unused, go register to sql

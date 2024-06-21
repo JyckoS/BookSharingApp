@@ -1,0 +1,89 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #282727; /* elegant dark gray */
+    margin: 20px 0;
+}
+h1 a {
+    color: #4CAF50; /* elegant green */
+    text-decoration: none;
+}
+h1 a:hover {
+    color: #337735; /* elegant sdark green */
+    text-decoration: underline;
+}
+
+.thread {
+    width: 80%;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid lightgray;
+    padding: 16px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table th {
+    background-color: #52b055;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f8eb; /* a bit lighter than beige */
+}
+.owner {
+    background-color: #e6ffe6; /* light green */
+}
+
+table tr td img {
+    width: 100px;
+    height: 100px;
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.user p {
+    margin: 10px 0 0 0;
+}
+
+.content p {
+    margin: 0 0 10px 0;
+}
+
+.content a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}

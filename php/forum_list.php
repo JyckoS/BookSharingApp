@@ -43,14 +43,10 @@ if (!isset($_SESSION["userid"])) {
                     $author = $row["Author"];
                     $requestdate = $row["RequestDate"];
                     $status = $row["Status"];
-                    $image = $row["image_base64"];
+                   // $image = $row["image_base64"];
                     $id = $row["RequestID"];
                     // Check if image exists, if not then use dummy image
-                    $imageSrc = "../images/dummy_cover.jpg";
-                    if (!empty($image)) {
-                        $imageSrc = "data:image/jpeg;base64," . $image;
- 
-                    }
+                    $imageSrc = getImageSrc($row);
                     echo "<tr>";
 
                     echo "<td>
@@ -66,7 +62,7 @@ if (!isset($_SESSION["userid"])) {
                     else {
                         echo "<td class='statusclosed'>$status</td>";
                     }
-                    echo "<td data-label='Action'><a href='view_thread.php?id=$id' class='button'>Open</a></td>
+                    echo "<td data-label='Action'><a href='forum_thread.php?id=$id' class='button'>Open</a></td>
 
                     ";
                     echo "</tr>";
