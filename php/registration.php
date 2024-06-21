@@ -56,7 +56,7 @@
                 <p><button type="button" id="passwordtoggle" 
                 onclick="showPassword('password')">Show</button></p>
 
-                <p><label for = "password"> Password </label></p> <!-- come back to this -->
+                <p><label for = "password"> Confirm Password </label></p> <!-- come back to this -->
                 <p><input type = "password" id = "passwordConfirmation" name = "passwordConfirmation" placeholder = "Enter Password" required/></p>
                 <p><button type="button" id="passwordConfirmationToggle" 
                 onclick="showPassword('passwordConfirmation')">Show</button>            
