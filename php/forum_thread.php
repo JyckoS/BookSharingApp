@@ -42,7 +42,19 @@
         $ownerImage = getImageSrc($ownerData);
         $ownerName = $ownerData["Name"];
         $ownerType = $ownerData["UserType"];
-
+        if ($hasAccess) {
+            $status = $row['Status']; 
+            $newStatus = ($status == 'OPEN') ? 'CLOSED' : 'OPEN';
+            $buttonText = ($status == 'OPEN') ? 'Mark as Closed' : 'Mark as Open';
+            
+            echo "
+                <form method='post' action='actions/process_status.php'>
+                    <input type='hidden' name='requestID' value='$id'>
+                    <input type='hidden' name='newStatus' value='$newStatus'>
+                    <button type='submit'>$buttonText</button>
+                </form>
+            ";        
+        }
         echo "<table>";
         // Make owner post
         echo "<tr class='owner'>
