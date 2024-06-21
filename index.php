@@ -37,6 +37,7 @@ if ($userId) {
 <html>
 
 <head>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/headerstyle.css">
 </head>
 
@@ -61,11 +62,12 @@ if ($userId) {
     </header>
 
     <h3 class = "information">
-            MMU's Book Sharing Center (BDC) aims to foster a culture of reading and lifelong learning 
-            by providing free access to books for students within Multimedia University.
-            By recycling educational and recreational literature, the center will bridge the 
-            gap between those who have excess books and those who need them, promoting sustainability and social responsibility.
+        MMU's Book Sharing Center (BDC) aims to foster a culture of reading and lifelong learning 
+        by providing free access to books for students within Multimedia University.
+        By recycling educational and recreational literature, the center will bridge the 
+        gap between those who have excess books and those who need them, promoting sustainability and social responsibility.
     </h3>
+
 </body>
 
 
