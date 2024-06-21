@@ -43,9 +43,11 @@ input {
     margin: 0 auto;
 }
 input[type="submit"] {
+    font-weight: bold;
+    background-color: rgb(39, 93, 192);
+    cursor: pointer;
     height: 40px;
     margin-top: 7vh;
-    background-color: lightskyblue;
     color: white;
     font-size: 20px;
 }

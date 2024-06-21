@@ -22,7 +22,14 @@ input[type = submit]{
     cursor: pointer;
     padding: 16px ;
 }
+.formRegister a {
+    padding: 2px;
+    background-color: rgb(151, 22, 22);
+    color: white;
+    text-align: center;
+    font-size: 30px;
 
+}
 form 
 {
     text-align: center;
@@ -45,7 +52,8 @@ label
 
 .formRegister {
     background-color: white;
-
+    display: flex;
+    flex-direction: column;
     margin-top: 5vh;
     margin-left: 100px;
     margin-right: 100px;
