@@ -4,6 +4,7 @@
     <head>
         <title>Login - MMU Book Sharing</title>
         <link rel="stylesheet" href="../css/login.css">
+        <script src="../scripts/show_password.js"></script>
     </head>
     <body>
         <!-- Custom header because they havent logged in -->
@@ -44,10 +45,11 @@
                 <input type="text" id="userid" name="userid" required>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
+                <button onclick="showPassword('password');" type="button" id="passwordtoggle">Show</button>
                 <input type="submit" value="Login">
 
             </form>
-            <p>Not registered? </p><a href="registration.php">Click me to register</a>
+            <p>Not registered? </p><a class="register" href="registration.php">Click me to register</a>
         </div>
         <!-- Custom footer because they havent logged in -->
         <footer>

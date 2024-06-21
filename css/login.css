@@ -26,6 +26,15 @@ label {
     text-align: left;
 }
 a {
+    font-size: 15px;
+    margin-top: 20px;
+}
+.register {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 7px;
+    background-color: rgb(39, 192, 113);
     font-size: 20px;
 }
 form {
@@ -47,7 +56,11 @@ input[type="submit"] {
     background-color: rgb(39, 93, 192);
     cursor: pointer;
     height: 40px;
-    margin-top: 7vh;
+    margin-top: 3vh;
     color: white;
     font-size: 20px;
+}
+button {
+    font-size: 15px;
+    width: 60px;
 }
