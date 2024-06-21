@@ -12,7 +12,7 @@ if (!isset($_SESSION["userid"])) {
 
 <head>
     <title>Create book request - MMU Book Sharing</title>
-    <link rel="stylesheet" href="../css/forumlist.css">
+    <link rel="stylesheet" href="../css/forum_create.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ if (!isset($_SESSION["userid"])) {
 
     <div>
         <h1>
-            <a href="forum_list.php">Request Forum</a> -> Create book request</h1>
+            <a href="forum_list.php">Request Forum</a> > Create book request</h1>
         <form action="actions/create_request.php" method="post" enctype="multipart/form-data">
             <label for="title">Book Title:</label>
             <input type="text" id="title" name="title" required>

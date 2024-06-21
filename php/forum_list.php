@@ -42,9 +42,9 @@ if (!isset($_SESSION["userid"])) {
                     $userid = $row["StudentID"];
                     $author = $row["Author"];
                     $requestdate = $row["RequestDate"];
-                    $status = $row["status"];
+                    $status = $row["Status"];
                     $image = $row["image_base64"];
-                
+                    $id = $row["RequestID"];
                     // Check if image exists, if not then use dummy image
                     $imageSrc = "../images/dummy_cover.jpg";
                     if (!empty($image)) {
@@ -58,8 +58,16 @@ if (!isset($_SESSION["userid"])) {
                     </td>
                     <td>$title</td>
                     <td>$author</td>
-                    <td>$requestdate</td>
-                    <td>$status</td>
+                    <td>$requestdate</td>";
+                    if ($status == "OPEN") {
+                    echo "
+                    <td class='statusopen'>$status</td>";
+                    }
+                    else {
+                        echo "<td class='statusclosed'>$status</td>";
+                    }
+                    echo "<td data-label='Action'><a href='view_thread.php?id=$id' class='button'>Open</a></td>
+
                     ";
                     echo "</tr>";
                 }
