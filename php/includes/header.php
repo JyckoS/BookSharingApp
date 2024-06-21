@@ -1,6 +1,5 @@
 <?php
-require_once 'db_connect.php';
-;
+require_once 'db_connect.php';;
 $conn = openConnection();
 ?>
 
@@ -41,8 +40,14 @@ if ($userId) {
                     <a href="manager.php">Manager Function</a>
                 <?php } ?>
 
-                <a href="actions/process_logout.php">Logout</a>
+
             </div>
+            <button class="accountprofile" onclick="window.location.href='account_profile.php'">
+                    <img src="../images/profileicon.jpg" alt="Profile Icon">
+                </button>
+                <button class="accountprofile" onclick="window.location.href='actions/process_logout.php'">
+                    <img src="../images/logout.jpg" alt="Logout Button">
+                </button>
         </div>
     </header>
 </body>

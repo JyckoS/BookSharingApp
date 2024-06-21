@@ -56,8 +56,13 @@ if ($userId) {
                     <a href="php/manager.php">Manager Function</a>
                 <?php } ?>
 
-                <a href="php/actions/process_logout.php">Logout</a>
             </div>
+            <button class="accountprofile" onclick="window.location.href='php/account_profile.php'">
+                    <img src="images/profileicon.jpg" alt="Profile Icon">
+                </button>
+                <button class="accountprofile" onclick="window.location.href='php/actions/process_logout.php'">
+                    <img src="images/logout.jpg" alt="Logout Button">
+                </button>
         </div>
     </header>
 

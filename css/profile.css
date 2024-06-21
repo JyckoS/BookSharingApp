@@ -7,7 +7,7 @@ body {
 .profile {
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 20px;
     background: beige;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -44,8 +44,13 @@ body {
 .profile h3 {
     margin-bottom: 5px;
 }
-
-button, input[type="file"] {
+.uploadbutton {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="file"] {
     padding: 10px 20px;
     background-color: #5cb85c;
     border-radius: 5px;
