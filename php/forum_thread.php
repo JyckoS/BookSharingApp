@@ -42,8 +42,9 @@
         $ownerImage = getImageSrc($ownerData);
         $ownerName = $ownerData["Name"];
         $ownerType = $ownerData["UserType"];
+        $status = $row['Status']; 
+
         if ($hasAccess) {
-            $status = $row['Status']; 
             $newStatus = ($status == 'OPEN') ? 'CLOSED' : 'OPEN';
             $buttonText = ($status == 'OPEN') ? 'Mark as Closed' : 'Mark as Open';
             
@@ -68,7 +69,7 @@
         
         </td>
         </tr>";
-
+        if ($status == "OPEN") {
         // Now make reply button
          echo "<tr>
          <td colspan='2'>
@@ -82,6 +83,7 @@
              </form>
          </td>
          </tr>";
+        }
         if (isset($posts) && !empty($posts)) {
             $postsArray = json_decode($posts, true);
             foreach ($postsArray as $postid) {
