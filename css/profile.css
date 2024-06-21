@@ -1,0 +1,53 @@
+/* Made BY JYCKOS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+
+}
+.profile {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background: beige;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile h1, h2, h3 {
+    color: rgb(47, 46, 46); /* darkgray*/
+}
+
+.profile h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile h2 {
+    margin-bottom: 10px;
+}
+
+.profile h3 {
+    margin-bottom: 5px;
+}
+
+button, input[type="file"] {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    border-radius: 5px;
+    cursor: pointer;
+}
