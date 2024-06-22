@@ -33,7 +33,11 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
-
+.cover {
+    max-width: 400px;
+    max-height: 300px;
+    
+}
 .button:hover {
     background-color: #45a049;
 }

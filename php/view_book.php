@@ -95,6 +95,10 @@ $loanID = $_GET['loan_id'];
         <h2>Book Details</h2>
         <div class="book-details">
             <div>
+                <img class='cover' src='<?php
+                    $bookID = $book["BookID"];
+                                        $imgsrc = getImageSrc($book);
+                                        echo "$imgsrc" ?>' alt='img'>
                 <strong>Title:</strong> <?php echo htmlspecialchars($book['Title']); ?><br>
                 <strong>Author:</strong> <?php echo htmlspecialchars($book['Author']); ?><br>
                 <strong>Publisher:</strong> <?php echo htmlspecialchars($book['Publisher']); ?><br>
@@ -103,17 +107,33 @@ $loanID = $_GET['loan_id'];
                 <strong>Book Condition:</strong> <?php echo getBookCondition($book['BookCondition']); ?><br>
                 <strong>Description:</strong><br> <?php echo htmlspecialchars($book['Description']); ?><br>
                 <strong>Status:</strong>
-                <?php echo htmlspecialchars($book['Status']); ?><?php if ($showApproveButton): ?>
-                    <form method="post">
-                        <input type="hidden" name="loan_id" value="<?php echo $loanID; ?>">
-                        <button type="submit" name="approve" class="button button-approve">Approve</button>
-                    </form>
-                <?php endif; ?><br>
+                <?php echo htmlspecialchars($book['Status']); ?><?php if ($showApproveButton) : ?>
+                <form method="post">
+                    <input type="hidden" name="loan_id" value="<?php echo $loanID; ?>">
+                    <button type="submit" name="approve" class="button button-approve">Approve</button>
+                </form>
+            <?php endif; ?><br>
+            <form action="actions/book_status.php" method="post">
+            <input type="hidden" name="LoanID" value="<?php $loanID = $_GET["loan_id"]; echo "$loanID"; ?>">
+
+                <input type="hidden" name="BookID" value="<?php echo "$bookID"; ?>">
+                <p><label for="ChangeStat">Change Status </label></p>
+                <p>
+                    <select id="ChangeStat" name="ChangeStat" required>
+                        <option value="">Select Book Status</option>
+                        <option value="APPROVED">Approved</option>
+                        <option value="REJECTED">Rejected</option>
+                        <option value="BORROWED">Borrowed</option>
+                        <option value="AVAILABLE">Available</option>
+                        <option value="TAKEN_BACK">Taken Back</option>
+                    </select>
+                    <input type="submit" value="Change Status">
+            </form>
+            </p>
             </div>
-            <?php if (!empty($book['image_base64'])): ?>
+            <?php if (!empty($book['image_base64'])) : ?>
                 <div>
-                    <img src="data:image/jpeg;base64,<?php echo $book['image_base64']; ?>" alt="Book Cover"
-                        style="max-width: 200px; max-height: 300px;">
+                    <img src="data:image/jpeg;base64,<?php echo $book['image_base64']; ?>" alt="Book Cover" style="max-width: 200px; max-height: 300px;">
                 </div>
             <?php endif; ?>
 
