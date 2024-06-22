@@ -38,26 +38,61 @@ function getUserRowData($id) {
     $row = mysqli_fetch_assoc($result);
     return $row;
 }
+
+
 function getAllBorrowedBookResult($userid) {
     $conn = openConnection();
 
     $query = "SELECT * FROM borrow WHERE StudentID = '$userid'";
     $result = mysqli_query($conn, $query);
+
+    if ($result === false) {
+        die('Error in SQL query: ' . mysqli_error($conn));
+    }
+
     if (mysqli_num_rows($result) <= 0) {
         return "unknown";
     }
+
     return $result;
 }
+
 function getAllLoanedBookResult($userid) {
     $conn = openConnection();
 
     $query = "SELECT * FROM loan WHERE StudentID = '$userid'";
     $result = mysqli_query($conn, $query);
+
+    if ($result === false) {
+        die('Error in SQL query: ' . mysqli_error($conn));
+    }
+
     if (mysqli_num_rows($result) <= 0) {
         return "unknown";
     }
+
     return $result;
 }
+
+function getAllWishlistResult($userid) {
+    $conn = openConnection();
+
+    $query = "SELECT * FROM wishlist WHERE StudentID = '$userid'";
+    $result = mysqli_query($conn, $query);
+
+    if ($result === false) {
+        die('Error in SQL query: ' . mysqli_error($conn));
+    }
+
+    if (mysqli_num_rows($result) <= 0) {
+        return "unknown";
+    }
+
+    return $result;
+}
+
+
+
 function getPostData($id) {
     $conn = openConnection();
 
