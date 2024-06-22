@@ -37,12 +37,33 @@ if (!$insert) {
     exit;
 }
 $loanID = mysqli_insert_id($conn);
-
-
 $query = "INSERT INTO books 
 (LoanID, Title, Author, Genre, Description, Publisher, YearPublished, BookCondition, Status, StudentID) 
 VALUES 
 ('$loanID', '$title', '$author', '$genre', '$description', '$publisher', '$yearPublished', '$bookCondition', 'PENDING', '$userID')";
+
+
+if (!empty($_FILES['image']['name'])) {
+
+    $fileName = basename($_FILES['image']['name']);
+    $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
+    $fileType = strtolower($fileExt);
+
+    $allowTypes = array('jpg', 'jpeg', 'png', 'gif');
+    if (!in_array($fileType, $allowTypes)) {
+        $statusMsg = "invalidext";
+        header("Location: ../loanbooks.php?message=invalidtype");
+        exit;
+    }
+    // Image is good to go
+    $image = $_FILES['image']['tmp_name'];
+    $imgContent = base64_encode(file_get_contents($image));
+    $query = "INSERT INTO books 
+    (LoanID, Title, Author, Genre, Description, Publisher, YearPublished, BookCondition, Status, StudentID, image_base64) 
+    VALUES 
+    ('$loanID', '$title', '$author', '$genre', '$description', '$publisher', '$yearPublished', '$bookCondition', 'PENDING', '$userID', '$imgContent')";
+    
+}
 
 $insert = mysqli_query($conn, $query);
 
