@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+if (!isset($_SESSION["userid"])) {
+    header("Location: login.php");
+    exit;
+}
+if ($_SESSION["usertype"] != "MANAGER") {
+    header("Location: login.php");
+    exit;
+}
+
+
+?>
 <!DOCTYPE html>
 
 <html>

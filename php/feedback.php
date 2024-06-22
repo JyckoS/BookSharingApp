@@ -6,6 +6,8 @@ session_start();
 if (!isset($_SESSION["userid"])) {
     header("Location: login.php");
 }
+
+$userid = $_SESSION["userid"];
 ?>
 
 
@@ -25,7 +27,7 @@ include "includes/header.php";
         <!-- Check if student is logged in or not, if not send to login.php -->
         <label for="message">Write your feedback below</label>
         <textarea id="message" name="message" rows="6" required></textarea>
-        <input type="hidden" name="studentid" value="1191202266"> 
+        <input type="hidden" name="studentid" value="<?php echo "$userid"; ?>"> 
         <input type="submit" value="Send Feedback">
     </form>
     <?php 
