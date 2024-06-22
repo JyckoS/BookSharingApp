@@ -5,58 +5,117 @@ session_start();
 require "db_connect.php";
 $connection = openConnection();
 
-
-
 ?>
+
+<!--Made by Batrisyia And Jycko -->
 
 <!DOCTYPE html>
 <html>
     <head>
         <title> MMU's Book Sharing Center </title>
-        <link rel = "stylesheet" href = "../css/searchbooks.css?v=<?php echo time(); ?>"/>
-    <head>
+        <link rel="stylesheet" href="../css/search_books.css">
+    </head> 
 
-    <script>
-    </script>
     <body>
-        <header>
-            <?php include "includes/header.php";?>
-        </header>
+        
+        <?php include "includes/header.php"; ?>
+        <h3 class="center">Search Books</h3>
 
-        <h3> Search Books </h3>
+        <div class="searchcontainer">
+        <form method="GET" action="" class="search">
+            <div class="filter">
+                <label for="genre">Genre:</label>
+                <select name="genre" id="genre">
+                    <option value="">All</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="History">History</option>
+                    <option value="Other">Others</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label for="sort_year">Sort by Year:</label>
+                <select name="sort_year" id="sort_year">
+                    <option value="newest">Newest to Oldest</option>
+                    <option value="oldest">Oldest to Newest</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label for="search">Search:</label>
+                <input type="text" name="search" id="search" placeholder="The book Author, or Title, or Publisher"/>
+            </div>
+            <button type="submit" class="button">Apply</button>
+        </form>
         <div>
-                <div style = 'margin-left:10%; margin-right:10%'>
+            <table class="book">
+                <tr>
+                    <th>Book Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Year Published</th>
+                    <th>Genre</th>
+                    <th>Book Condition</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
                 <?php
-                    $sql = "SELECT * FROM books";
-                    $result = $connection->query($sql);
-                    
 
-                    if(!$result)
-                    {
-                        die("Invalid query: " . $connection->error);
+                    $sql = "SELECT * FROM books WHERE 1=1";
+                    
+                    if (!empty($_GET['genre'])) {
+                        $genre = mysqli_real_escape_string($connection, $_GET['genre']);
+                        $sql .= " AND Genre = '$genre'";
                     }
 
-                    while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <div class = "books">
-                        <p><?php echo $row['BookID']; ?></p>
-                        <p style = "font-weight: bold;"><?php echo $row['Title']; ?></p>
-                        <p>by <?php echo $row['Author']; ?></p>
-                        <p>Published by <?php echo $row['Publisher']; ?></p>
-                        <p>Published in the year <?php echo $row['YearPublished']; ?></p>
-                        <p>Genre: <?php echo $row['Genre']; ?></p>
-                        <p>Condition: <?php echo $row['BookCondition']; ?></p>
-                        <p><?php echo $row['Status']; ?></p>
-                        <p><a href="bookdetails.php?bookID=<?php echo $row['BookID']; ?>" class="button">View Book
-                                Details</a></p>
-                    </div>
-                <?php } ?>
+                    if (!empty($_GET['search'])) {
+                        $search = mysqli_real_escape_string($connection, $_GET['search']);
+                        $sql .= " AND 
+                        (Author LIKE '%$search%' 
+                        OR 
+                        Title LIKE '%$search%' 
+                        OR 
+                        Publisher LIKE '%$search%')";
+                    }
 
-        
+                    if (!empty($_GET['sort_year'])) {
+                        if ($_GET['sort_year'] == 'newest') {
+                            $sql .= " ORDER BY YearPublished DESC";
+                        } elseif ($_GET['sort_year'] == 'oldest') {
+                            $sql .= " ORDER BY YearPublished ASC";
+                        }
+                    }
+                    $result = $connection->query($sql);
 
+                    if (!$result) {
+                        die("Invalid query: " . $connection->error);
+                    }
+                    
+                    while ($row = $result->fetch_assoc()) {
+                        $imgSrc = getImageSrc($row);
+                        echo "<tr>
+                                <td>" . "<img src='$imgSrc' alt='cover'>" . "</td>
+                                <td>" . $row["Title"] . "</td>
+                                <td>" . $row["Author"] . "</td>
+                                <td>" . $row["Publisher"] . "</td>
+                                <td>" . $row["YearPublished"] . "</td>
+                                <td>" . $row["Genre"] . "</td>
+                                <td>" . $row["BookCondition"] . "</td>
+                                <td>" . $row["Status"] . "</td>
+                                <td>" . "<tpd><a href='bookdetails.php?bookID= 'class='button'>View</a></p>"  . "</td>" .
+                                
+                            "</tr>";
+                    
+                    }
+                ?>
+            </table>
         </div>
-
-        <footer>
-            <?php include "includes/footer.php";?>
-        </footer>
+                </div>
+        <?php include "includes/footer.php"; ?>
     </body>
 </html>
