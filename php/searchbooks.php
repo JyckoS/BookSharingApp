@@ -98,6 +98,7 @@ $connection = openConnection();
                     
                     while ($row = $result->fetch_assoc()) {
                         $imgSrc = getImageSrc($row);
+                        $bookID = $row["BookID"];
                         echo "<tr>
                                 <td>" . "<img src='$imgSrc' alt='cover'>" . "</td>
                                 <td>" . $row["Title"] . "</td>
@@ -107,7 +108,7 @@ $connection = openConnection();
                                 <td>" . $row["Genre"] . "</td>
                                 <td>" . $row["BookCondition"] . "</td>
                                 <td>" . $row["Status"] . "</td>
-                                <td>" . "<tpd><a href='bookdetails.php?bookID= 'class='button'>View</a></p>"  . "</td>" .
+                                <td>" . "<tpd><a href='bookdetails.php?bookID=$bookID'class='button'>View</a></p>"  . "</td>" .
                                 
                             "</tr>";
                     
