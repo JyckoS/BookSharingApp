@@ -1,0 +1,41 @@
+.terms{
+    border: solid 1px black;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+body {
+
+    margin-left: 20px;
+    background-image: url("../images/loginwallpaper.jpg");
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+
+}
+
+form{
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: white;
+    border: solid 2px grey;
+    border-radius: 2px;
+    padding: 20px;
+
+}
+
+input[type = submit]{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(39, 75, 192);
+    text-decoration: none;
+    width: 10%;
+    margin-bottom: 5vh;
+    border:none;
+    cursor: pointer;
+    padding: 16px ;
+}
