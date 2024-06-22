@@ -46,7 +46,7 @@ $connection = openConnection();
                         <p>Genre: <?php echo $row['Genre']; ?></p>
                         <p>Condition: <?php echo $row['BookCondition']; ?></p>
                         <p><?php echo $row['Status']; ?></p>
-                        <tpd><a href="bookdetails.php?bookID=<?php echo $row['BookID']; ?>" class="button">View Book
+                        <p><a href="bookdetails.php?bookID=<?php echo $row['BookID']; ?>" class="button">View Book
                                 Details</a></p>
                     </div>
                 <?php } ?>
