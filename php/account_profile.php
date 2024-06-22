@@ -24,8 +24,6 @@ if (!isset($_SESSION["userid"])) {
 
         <?php
         require_once 'db_connect.php';
-        $conn = openConnection();
-        session_start();
         $userid = $_SESSION["userid"];
         $userrow = getUserRowData($userid);
         $name = $userrow["Name"];

@@ -21,20 +21,3 @@ th {
     margin-top: 20px;
     text-align: center;
 }
-.pagination a {
-    color: black;
-    display: inline-block;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-}
-.pagination a.active {
-    background-color: #007BFF;
-    color: white;
-    border: 1px solid #007BFF;
-}
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-}

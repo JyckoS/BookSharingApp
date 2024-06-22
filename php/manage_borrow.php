@@ -6,28 +6,6 @@ if (!isset($_SESSION["userid"])) {
 }
 
 require 'db_connect.php';
-$connection = openConnection();
-
-// Pagination setup
-$limit = 5; // Number of entries to show in a page.
-if (isset($_GET["page"])) {
-    $page = $_GET["page"];
-} else {
-    $page = 1;
-}
-;
-$start_from = ($page - 1) * $limit;
-
-// Fetch data from borrow table
-$sql = "SELECT BorrowID, BookID, StudentID, BorrowDate, ReturnDate FROM borrow LIMIT $start_from, $limit";
-$result = mysqli_query($connection, $sql);
-
-// Fetch total number of records
-$sql_total = "SELECT COUNT(*) FROM borrow";
-$result_total = mysqli_query($connection, $sql_total);
-$row_total = mysqli_fetch_row($result_total);
-$total_records = $row_total[0];
-$total_pages = ceil($total_records / $limit);
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +24,15 @@ $total_pages = ceil($total_records / $limit);
     <?php
     include "includes/header.php";
     ?>
+
+    <?php
+
+    // Fetch data from borrow table
+    $sql = "SELECT BorrowID, BookID, StudentID, BorrowDate, ReturnDate FROM borrow";
+    $result = mysqli_query($conn, $sql);
+
+    ?>
+
     <div class="content">
         <h2>Manage Borrow</h2>
         <a href="manager.php" class="button">Back</a>
@@ -69,13 +56,6 @@ $total_pages = ceil($total_records / $limit);
                 <?php } ?>
             </table>
         </div>
-        <div class="pagination">
-            <?php
-            for ($i = 1; $i <= $total_pages; $i++) {
-                echo "<a href='manage_borrow.php?page=" . $i . "' class='" . ($page == $i ? "active" : "") . "'>" . $i . "</a> ";
-            }
-            ?>
-        </div>
     </div>
     <?php
     include "includes/footer.php";
@@ -84,5 +64,5 @@ $total_pages = ceil($total_records / $limit);
 
 </html>
 <?php
-closeConnection($connection);
+closeConnection($conn);
 ?>
