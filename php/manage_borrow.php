@@ -6,6 +6,7 @@ if (!isset($_SESSION["userid"])) {
 }
 
 require 'db_connect.php';
+$connection = openConnection();
 ?>
 
 <!DOCTYPE html>
@@ -26,11 +27,9 @@ require 'db_connect.php';
     ?>
 
     <?php
-
     // Fetch data from borrow table
     $sql = "SELECT BorrowID, BookID, StudentID, BorrowDate, ReturnDate FROM borrow";
-    $result = mysqli_query($conn, $sql);
-
+    $result = mysqli_query($connection, $sql);
     ?>
 
     <div class="content">
@@ -44,6 +43,7 @@ require 'db_connect.php';
                     <th>StudentID</th>
                     <th>BorrowDate</th>
                     <th>ReturnDate</th>
+                    <th>Return Confirmation</th>
                 </tr>
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
@@ -52,6 +52,13 @@ require 'db_connect.php';
                         <td><?php echo $row['StudentID']; ?></td>
                         <td><?php echo $row['BorrowDate']; ?></td>
                         <td><?php echo $row['ReturnDate']; ?></td>
+                        <td>
+                            <form action="actions/confirm_return.php" method="post" onsubmit="return confirm('Are you sure you want to confirm the return of this book?');">
+                                <input type="hidden" name="BorrowID" value="<?php echo $row['BorrowID']; ?>">
+                                <input type="hidden" name="BookID" value="<?php echo $row['BookID']; ?>">
+                                <button type="submit" class="button">Confirm</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php } ?>
             </table>
@@ -64,5 +71,5 @@ require 'db_connect.php';
 
 </html>
 <?php
-closeConnection($conn);
+closeConnection($connection);
 ?>
