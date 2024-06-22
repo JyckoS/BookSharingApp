@@ -47,7 +47,7 @@ function getAllBorrowedBookResult($userid) {
     $result = mysqli_query($conn, $query);
 
     if ($result === false) {
-        die('Error in SQL query: ' . mysqli_error($conn));
+        return "unknown";
     }
 
     if (mysqli_num_rows($result) <= 0) {
@@ -64,7 +64,7 @@ function getAllLoanedBookResult($userid) {
     $result = mysqli_query($conn, $query);
 
     if ($result === false) {
-        die('Error in SQL query: ' . mysqli_error($conn));
+        return "unknown";
     }
 
     if (mysqli_num_rows($result) <= 0) {
@@ -81,7 +81,7 @@ function getAllWishlistResult($userid) {
     $result = mysqli_query($conn, $query);
 
     if ($result === false) {
-        die('Error in SQL query: ' . mysqli_error($conn));
+        return "unknown";
     }
 
     if (mysqli_num_rows($result) <= 0) {

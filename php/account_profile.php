@@ -45,7 +45,9 @@ if (!isset($_SESSION["userid"])) {
         $imagesrc = getImageSrc($userrow);
 
         $borrowedbooks = getAllBorrowedBookResult($userid);
+
         $loanedbooks = getAllLoanedBookResult($userid);
+
         $wishlistbooks = getAllWishlistResult($userid);
 
         echo "<img src='$imagesrc' alt='avatar'>";
