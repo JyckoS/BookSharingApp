@@ -14,7 +14,6 @@ if (!isset($_GET['loan_id'])) {
 }
 
 $loanID = $_GET['loan_id'];
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@ $loanID = $_GET['loan_id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Book Details</title>
     <!-- Include your CSS files -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/manager_view_book.css">
 </head>
 
 <body>
