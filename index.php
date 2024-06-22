@@ -47,8 +47,8 @@ if ($userId) {
             <img src="images/mmu_logo.png" alt="Logo">
             <div class="topnav">
                 <a href="index.php">Home</a>
-                <a href="#search">Search Books</a>
-                <a href="#loan">Loan Books</a>
+                <a href="php/searchbooks.php">Search Books</a>
+                <a href="php/loanbooks.php">Loan Books</a>
                 <a href="php/forum_list.php">Request Books</a>
 
                 <!-- Conditionally display Manager Function link -->
