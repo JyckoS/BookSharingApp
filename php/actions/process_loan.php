@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: ../loanbooks.php?message=error");
     exit;
 }
-echo "wafaw";
 
 session_start();
 $conn = openConnection();
@@ -19,7 +18,6 @@ $bookCondition = mysqli_real_escape_string($conn, $_POST['bookCondition']);
 $startDate = mysqli_real_escape_string($conn, $_POST['startDate']);
 $endDate = mysqli_real_escape_string($conn, $_POST['endDate']);
 $userID = $_SESSION["userid"];
-echo "test";
 if (empty($title) || empty($author) || empty($genre) || empty($description) ||
 empty($publisher) || empty($yearPublished) || empty($bookCondition) || empty($startDate
 || empty($endDate))) {
@@ -32,7 +30,6 @@ VALUES
 ('$userID', '$startDate', '$endDate');";
 
 $insert = mysqli_query($conn, $query);
-echo "vvv";
 
 
 if (!$insert) {
@@ -41,16 +38,13 @@ if (!$insert) {
 }
 $loanID = mysqli_insert_id($conn);
 
-echo "xxxx";
 
 $query = "INSERT INTO books 
 (LoanID, Title, Author, Genre, Description, Publisher, YearPublished, BookCondition, Status, StudentID) 
 VALUES 
 ('$loanID', '$title', '$author', '$genre', '$description', '$publisher', '$yearPublished', '$bookCondition', 'PENDING', '$userID')";
-echo "zzzz";
 
 $insert = mysqli_query($conn, $query);
-echo "ppp";
 
 if (!$insert) {
     header("Location: ../loanbooks.php?message=sqlerror2");
