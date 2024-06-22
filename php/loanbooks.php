@@ -34,6 +34,7 @@
                     <option value="Mystery">Mystery</option>
                     <option value="Romance">Romance</option>
                     <option value="History">History</option>
+                    <option value="Cooking">Cooking</option>
                     <option value="Other">Others</option>
                 </select>
             </p>

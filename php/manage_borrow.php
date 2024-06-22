@@ -6,7 +6,6 @@ if (!isset($_SESSION["userid"])) {
 }
 
 require 'db_connect.php';
-$connection = openConnection();
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,7 @@ $connection = openConnection();
     <?php
     // Fetch data from borrow table
     $sql = "SELECT BorrowID, BookID, StudentID, BorrowDate, ReturnDate FROM borrow";
-    $result = mysqli_query($connection, $sql);
+    $result = mysqli_query($conn, $sql);
     ?>
 
     <div class="content">
@@ -71,5 +70,5 @@ $connection = openConnection();
 
 </html>
 <?php
-closeConnection($connection);
+closeConnection($conn);
 ?>

@@ -21,16 +21,12 @@ require 'db_connect.php';
 </head>
 
 <body>
-    <?php
-    include "includes/header.php";
-    ?>
+    <?php include "includes/header.php"; ?>
 
     <?php
-
     // Fetch data from loan table
     $sql = "SELECT LoanID, StudentID, LoanDate, ExpiryDate FROM loan";
     $result = mysqli_query($conn, $sql);
-
     ?>
 
     <div class="content">
@@ -43,6 +39,7 @@ require 'db_connect.php';
                     <th>StudentID</th>
                     <th>LoanDate</th>
                     <th>ExpiryDate</th>
+                    <th>Actions</th> <!-- New column for actions -->
                 </tr>
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
@@ -50,18 +47,19 @@ require 'db_connect.php';
                         <td><?php echo $row['StudentID']; ?></td>
                         <td><?php echo $row['LoanDate']; ?></td>
                         <td><?php echo $row['ExpiryDate']; ?></td>
+                        <td><a href="view_book.php?loan_id=<?php echo $row['LoanID']; ?>" class="button">View Book
+                                Details</a></td>
                     </tr>
                 <?php } ?>
             </table>
         </div>
-        
     </div>
-    <?php
-    include "includes/footer.php";
-    ?>
+
+    <?php include "includes/footer.php"; ?>
 </body>
 
 </html>
+
 <?php
 closeConnection($conn);
 ?>
