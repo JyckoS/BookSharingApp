@@ -1,0 +1,41 @@
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+
+}
+.padd {
+    padding: 30px 30px 30px 30px;
+}
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid lightgray;
+    padding: 16px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table th {
+    background-color: #52b055;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f8eb; /* a bit lighter than beige */
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #53b156;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 10px;
+}

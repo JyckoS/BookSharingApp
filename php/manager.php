@@ -28,6 +28,8 @@ $connection = openConnection();
         <div class="button-container">
             <a href="manage_borrow.php" class="square-button">Manage Borrow</a>
             <a href="manage_loan.php" class="square-button">Manage Loans</a>
+            <a href="manager_feedback.php" class="square-button">See Feedbacks</a>
+
         </div>
     </div>
     <?php
