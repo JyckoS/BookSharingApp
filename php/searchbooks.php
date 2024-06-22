@@ -5,15 +5,15 @@ session_start();
 require "db_connect.php";
 $connection = openConnection();
 
-?>
 
-<!--Made by Batrisyia -->
+
+?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <title> MMU's Book Sharing Center </title>
-        <link rel = "stylesheet" href = "../css/searchbooks.css"/>
+        <link rel = "stylesheet" href = "../css/searchbooks.css?v=<?php echo time(); ?>"/>
     <head>
 
     <script>
@@ -25,42 +25,33 @@ $connection = openConnection();
 
         <h3> Search Books </h3>
         <div>
-            <table>
-                <tr>
-                    <th> Book ID </th>
-                    <th> Title </th>
-                    <th> Author </th>
-                    <th> Publisher </th>
-                    <th> Year Published </th>
-                    <th> Genre </th>
-                    <th> Book Condition </th>
-                    <th> Status </th>
-                </tr>
+                <div style = 'margin-left:10%; margin-right:10%'>
                 <?php
                     $sql = "SELECT * FROM books";
                     $result = $connection->query($sql);
                     
+
                     if(!$result)
                     {
                         die("Invalid query: " . $connection->error);
                     }
-                    
-                    while($row = $result->fetch_assoc()){
-                            echo "<tr>
-                                    <td>" .$row["BookID"]. "</td>
-                                    <td>" .$row["Title"] ."</td>
-                                    <td>" .$row["Author"] . "</td>
-                                    <td>" .$row["Publisher"] . "</td>
-                                    <td>" .$row["YearPublished"] . "</td>
-                                    <td>" .$row["Genre"] . "</td>
-                                    <td>" .$row["BookCondition"] . "</td>
-                                    <td>" .$row["Status"] . "</td>
-                            </tr>";
-                        }
 
-                ?>
-            </table>
+                    while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <div class = "books">
+                        <p><?php echo $row['BookID']; ?></p>
+                        <p style = "font-weight: bold;"><?php echo $row['Title']; ?></p>
+                        <p>by <?php echo $row['Author']; ?></p>
+                        <p>Published by <?php echo $row['Publisher']; ?></p>
+                        <p>Published in the year <?php echo $row['YearPublished']; ?></p>
+                        <p>Genre: <?php echo $row['Genre']; ?></p>
+                        <p>Condition: <?php echo $row['BookCondition']; ?></p>
+                        <p><?php echo $row['Status']; ?></p>
+                        <tpd><a href="bookdetails.php?bookID=<?php echo $row['BookID']; ?>" class="button">View Book
+                                Details</a></p>
+                    </div>
+                <?php } ?>
 
+        
 
         </div>
 
