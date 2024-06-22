@@ -5,7 +5,20 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-
+.success {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    border-color: white;
+}
+.error {
+    padding: 10px;
+    background-color: firebrick;
+    color: white;
+    border-radius: 10px;
+    border-color: white;
+}
 body {
 
     margin-left: 20px;
