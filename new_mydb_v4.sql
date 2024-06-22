@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 22, 2024 at 11:29 AM
+-- Generation Time: Jun 22, 2024 at 11:31 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -256,7 +256,7 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`WishID`, `StudentID`, `Books`) VALUES
-(1, '1191202266', '1829');
+(1, '1191202266', '[]');
 
 --
 -- Indexes for dumped tables
