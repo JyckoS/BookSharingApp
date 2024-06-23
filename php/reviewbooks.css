@@ -1,0 +1,41 @@
+body {
+    background: lightblue;
+    
+    background-image: url("../images/loginwallpaper.jpg");
+    width: 100%;
+    font-family: Arial, sans-serif;
+
+
+}
+
+p{
+    padding-left: 30px;
+}
+
+.theBooks {
+    border:solid 1px grey;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-right:20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color:white;
+}
+
+.button, input[type = submit]{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(39, 75, 192);
+    text-decoration: none;
+    width: 25%;
+    margin-bottom: 5vh;
+    border:none;
+    cursor: pointer;
+    padding: 16px ;
+}
+
+
+
+textarea {
+    color: grey;
+}
