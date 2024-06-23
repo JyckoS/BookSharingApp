@@ -66,6 +66,8 @@ $bookID = $_GET['bookID'];
             <p><input type = "submit" value = "Submit"/></p>
         </form>
 
+        <p><a href="searchbooks.php" class="button">Back to Search</a></p>
+
     </body>
 
 </html>
