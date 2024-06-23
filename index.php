@@ -1,5 +1,5 @@
 <?php
-// Made by Jycko and Batrisyia
+// Made by Jycko
 
 session_start();
 if (!isset($_SESSION["userid"])) {
@@ -72,12 +72,12 @@ if ($userId) {
     
 
     <section class = "container">
-        <div class = "slider-Wrapper">
-            <div class = "slider">
+        <div class = "wrapper">
+            <div class = "slideshow">
                 <img id = "slide1" src = "images/index-join.jpg" alt = "Join Community"/>
                 <img id = "slide2" src = "images/index-share.jpg" alt = "Share Books"/>
             </div>
-            <div class = "slider-nav">
+            <div class = "slideshow-nav">
                     <a href = "#slide1"></a>
                     <a href = "#slide2"></a>
             </div>
