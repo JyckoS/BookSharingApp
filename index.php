@@ -1,5 +1,5 @@
 <?php
-// Made by Jycko 
+// Made by Jycko and Batrisyia
 
 session_start();
 if (!isset($_SESSION["userid"])) {
@@ -7,16 +7,6 @@ if (!isset($_SESSION["userid"])) {
     exit;
 }
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="css/footerstyle.css">
-    <link rel="stylesheet" href="css/headerstyle.css">
-    <title>Book Sharings App MMU</title>
-</head>
-<body>
-<?php
 require_once 'php/db_connect.php';;
 $conn = openConnection();
 
@@ -31,13 +21,19 @@ if ($userId) {
         $userType = $user['UserType'];
     }
 }
+
+
+
+//$bookID = $_GET['bookID'];
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
+    <title>Book Sharings App MMU</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/footerstyle.css">
     <link rel="stylesheet" href="css/headerstyle.css">
 </head>
 
@@ -72,6 +68,25 @@ if ($userId) {
         By recycling educational and recreational literature, the center will bridge the 
         gap between those who have excess books and those who need them, promoting sustainability and social responsibility.
     </h3>
+    
+    
+
+    <section class = "container">
+        <div class = "slider-Wrapper">
+            <div class = "slider">
+                <img id = "slide1" src = "images/index-join.jpg" alt = "Join Community"/>
+                <img id = "slide2" src = "images/index-share.jpg" alt = "Share Books"/>
+            </div>
+            <div class = "slider-nav">
+                    <a href = "#slide1"></a>
+                    <a href = "#slide2"></a>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    
 
 </body>
 
@@ -96,6 +111,7 @@ if ($userId) {
             <p class="copyright">&copy; MMU Book Sharing. All rights belongs to MMU.</p>
         </div>
     </div>
+
 </footer>
 </body>
 </html>
