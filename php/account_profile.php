@@ -1,4 +1,4 @@
-<!-- Made by JYCKO -->
+<!-- Made by JYCKO & Chew -->
 <?php
 session_start();
 if (!isset($_SESSION["userid"])) {

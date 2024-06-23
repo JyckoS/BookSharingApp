@@ -1,3 +1,5 @@
+<!-- Made by Chew -->
+
 <?php
 session_start();
 if (!isset($_SESSION["userid"])) {
@@ -5,7 +7,7 @@ if (!isset($_SESSION["userid"])) {
     exit;
 }
 
-require 'db_connect.php';
+require '../db_connect.php';
 $connection = openConnection();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -57,6 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 closeConnection($connection);
 
 // Redirect back to manage_borrow.php
-header("Location: manage_borrow.php");
+header("Location: ../manage_borrow.php");
 exit;
 ?>
