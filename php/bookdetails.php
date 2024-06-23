@@ -9,6 +9,7 @@ require "db_connect.php";
 <html>
 
 <head>
+
     <link rel="stylesheet" href="../css/footerstyle.css">
     <link rel="stylesheet" href="../css/headerstyle.css">
     <link rel="stylesheet" href="../css/button.css">
@@ -112,7 +113,8 @@ require "db_connect.php";
             </form>
 
         </div>
-        <a href="searchbooks.php" class="button">Back to Search</a>
+        
+        <p><a href="searchbooks.php" class="button">Back to Search</a></p>
     </div>
 
     <?php include "includes/footer.php"; ?>
