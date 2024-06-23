@@ -35,9 +35,9 @@ $query =
 $insert = mysqli_query($connection, $query);
 
 if (!$insert) {
-    header("Location: ../reviewbooks.php?bookID=$bookID&message=errorsql");
+    header("Location: ../bookdetails.php?bookID=$bookID&message=errorsql");
     exit;
 }
-header("Location: ../reviewbooks.php?bookID=$bookID&message=success");
+header("Location: ../bookdetails.php?bookID=$bookID&message=success");
 
 ?>
