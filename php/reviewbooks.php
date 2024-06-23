@@ -68,6 +68,8 @@ $bookID = $_GET['bookID'];
 
         <p><a href="searchbooks.php" class="button">Back to Search</a></p>
 
+        
+
     </body>
 
 </html>
