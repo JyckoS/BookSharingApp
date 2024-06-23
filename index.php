@@ -1,5 +1,5 @@
 <?php
-// Made by Jycko
+// Made by Jycko 
 
 session_start();
 if (!isset($_SESSION["userid"])) {

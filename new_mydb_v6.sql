@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 22, 2024 at 11:31 AM
+-- Generation Time: Jun 23, 2024 at 11:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -38,15 +38,16 @@ CREATE TABLE `books` (
   `BookCondition` enum('EXCELLENT','BAD','MINOR_DAMAGES','MISSING_PAGES') NOT NULL,
   `Description` text NOT NULL,
   `Status` enum('PENDING','APPROVED','REJECTED','RESERVED','BORROWED','AVAILABLE','TAKEN_BACK') NOT NULL,
-  `StudentID` varchar(30) NOT NULL
+  `StudentID` varchar(30) NOT NULL,
+  `image_base64` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`BookID`, `LoanID`, `Title`, `Author`, `Publisher`, `YearPublished`, `Genre`, `BookCondition`, `Description`, `Status`, `StudentID`) VALUES
-(1829, 1256, 'How to cook a lasagna underwater', 'Gordon Ramsay', 'Penguin Random House', 2016, 'Cooking', 'EXCELLENT', 'Learn how to cook a lasagna underwater with the guide of the world famous chef gordon ramsay', 'AVAILABLE', '1191202266');
+INSERT INTO `books` (`BookID`, `LoanID`, `Title`, `Author`, `Publisher`, `YearPublished`, `Genre`, `BookCondition`, `Description`, `Status`, `StudentID`, `image_base64`) VALUES
+(1829, 1256, 'How to cook a lasagna underwater', 'Gordon Ramsay', 'Penguin Random House', 2016, 'Romance', 'EXCELLENT', 'Learn how to cook a lasagna underwater with the guide of the world famous chef gordon ramsay', 'AVAILABLE', '1191202266', NULL);
 
 -- --------------------------------------------------------
 
