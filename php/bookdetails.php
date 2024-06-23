@@ -105,6 +105,12 @@ require "db_connect.php";
                         style="max-width: 200px; max-height: 300px;">
                 </div>
             <?php endif; ?>
+            
+            <form id="reviewForm" action="reviewbooks.php" method="get" style="margin-top: 10px;">
+                <input type="hidden" name="bookID" value="<?php echo $bookID; ?>">
+                <button type="submit" class="button">Review Book</button>
+            </form>
+
         </div>
         <a href="searchbooks.php" class="button">Back to Search</a>
     </div>
