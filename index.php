@@ -1,5 +1,5 @@
 <?php
-// Made by Jycko
+// made by batrisyia
 
 session_start();
 if (!isset($_SESSION["userid"])) {

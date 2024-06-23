@@ -11,7 +11,7 @@ if (!isset($_SESSION["userid"])) {
 <html>
 
 <head>
-    <title>Create book request - MMU Book Sharing</title>
+    <title>Create book request- MMU Book Sharing</title>
     <link rel="stylesheet" href="../css/forum_create.css">
 </head>
 

@@ -1,9 +1,16 @@
-<!-- MADE BY JYCKO -->
+<?php
+//Made By Jycko
+
+session_start();
+if (!isset($_SESSION["userid"])) {
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Request Thread - Book Sharing App</title>
+    <title>Request Thread - Book SharingApp</title>
     <link rel="stylesheet" href="../css/forum_thread.css">
 
 </head>

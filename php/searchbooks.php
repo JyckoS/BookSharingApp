@@ -108,7 +108,7 @@ $connection = openConnection();
                                 <td>" . $row["Genre"] . "</td>
                                 <td>" . $row["BookCondition"] . "</td>
                                 <td>" . $row["Status"] . "</td>
-                                <td>" . "<td><a href='bookdetails.php?bookID=$bookID'class='button'>View</a></p>"  . "</td>" .
+                                <td>" . "<a href='bookdetails.php?bookID=$bookID'class='button'>View</a></p>"  . "</td>" .
                                 
                             "</tr>";
                     

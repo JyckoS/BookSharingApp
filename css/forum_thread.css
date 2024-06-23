@@ -54,7 +54,7 @@ table tr:nth-child(even) {
     background-color: #f8f8eb; /* a bit lighter than beige */
 }
 .owner {
-    background-color: #e6ffe6; /* light green */
+    background-color: #e6ffe6; 
 }
 
 table tr td img {
