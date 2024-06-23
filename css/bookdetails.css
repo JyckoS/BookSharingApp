@@ -1,3 +1,19 @@
 .bookDetails{
     padding-left: 50px;
 }
+
+.viewReview{
+    border-top: solid 1px black;
+
+}
+
+.comments {
+    border: solid 0.5px grey;;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left:10px;
+}
+
+h3{
+    color: rgb(47, 62, 232)
+}
