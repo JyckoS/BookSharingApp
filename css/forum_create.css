@@ -33,7 +33,7 @@ form label {
 }
 
 form input[type="submit"]:hover {
-    background-color: #39833d;
+    background-color: rgb(80, 95, 183);
 }
 
 form p {
@@ -52,7 +52,7 @@ form input[type="file"] {
 form input[type="submit"] {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #50ad53;
+    background-color: #5552b0;
     color: white;
     border-radius: 5px;
     cursor: pointer;

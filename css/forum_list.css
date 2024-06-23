@@ -27,7 +27,7 @@ body {
     display: inline-block;
     margin-bottom: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #5552b0;
     color: white;
     border-radius: 5px;
     text-align: center;
@@ -45,14 +45,14 @@ body {
 .button {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #53b156;
+    background-color: #5552b0;
     color: white;
     border-radius: 5px;
     text-align: center;
     margin-left: 10px;
 }
 .forum a:hover {
-    background-color: #45a049; /* darken abit of bg*/
+    background-color: #5552b0; /* darken abit of bg*/
 }
 
 table {
@@ -71,7 +71,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #52b055;
+    background-color: #5552b0;
     color: white;
 }
 

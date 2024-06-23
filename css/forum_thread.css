@@ -14,11 +14,11 @@ h1 {
     margin: 20px 0;
 }
 h1 a {
-    color: #4CAF50; /* elegant green */
+    color: rgb(108, 112, 220); 
     text-decoration: none;
 }
 h1 a:hover {
-    color: #337735; /* elegant sdark green */
+    color: #5552b0;
     text-decoration: underline;
 }
 
@@ -45,7 +45,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #52b055;
+    background-color: #5552b0;
     color: white;
     font-weight: bold;
 }
@@ -80,7 +80,7 @@ table tr td img {
 }
 
 .content a {
-    color: #4CAF50;
+    color: #5552b0;
     text-decoration: none;
 }
 

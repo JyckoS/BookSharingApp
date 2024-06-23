@@ -21,7 +21,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #52b055;
+    background-color: #5552b0;
     color: white;
     font-weight: bold;
 }
@@ -33,7 +33,7 @@ table tr:nth-child(even) {
 .button {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #53b156;
+    background-color: #5552b0;
     color: white;
     border-radius: 5px;
     text-align: center;
