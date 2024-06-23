@@ -9,7 +9,7 @@ require "db_connect.php";
 <html>
 
 <head>
-
+    <link rel="stylesheet" href="../css/bookdetails.css">
     <link rel="stylesheet" href="../css/footerstyle.css">
     <link rel="stylesheet" href="../css/headerstyle.css">
     <link rel="stylesheet" href="../css/button.css">
@@ -115,6 +115,24 @@ require "db_connect.php";
         </div>
         
         <p><a href="searchbooks.php" class="button">Back to Search</a></p>
+        
+    
+        
+        <div class = "viewReview">
+        <h3 style = "color:blue;"><b>Comments from Students about this Book!</b></h3>
+            <?php
+                $sql = "SELECT * FROM review WHERE BookID = $bookID";
+                $result = mysqli_query($connection, $sql);
+
+                while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <p><div class = "comments">
+                        <p style = "margin-left: 20px">By <b><?php echo $row['StudentID']; ?></b> on <?php echo $row['ReviewDate'];?></p>
+                        <p style = "margin-left: 20px"><i><?php echo $row['CommentReview']; ?></i></p>
+                        <p style = "margin-left: 20px;color:grey; font-size: 10px;">Review ID:<?php echo $row['ReviewID']; ?></p>
+
+                    </div></p>
+            <?php } ?>    
+        </div>
     </div>
 
     <?php include "includes/footer.php"; ?>
