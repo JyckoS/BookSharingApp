@@ -58,8 +58,11 @@ $bookID = $_GET['bookID'];
         
         <form action = "actions/process_review.php" method = "post">
             <p><label for = "commentReview"> Your Book Review: </label><p>
-            <input type="hidden" name="studentid"> 
-            <p><textarea id = "commentReview" name = "commentReview" rows ="10" cols = "100"> Type in your review here</textarea></p>
+            <input type="hidden" id ="bookID" name="bookID" value="<?php 
+            $bookID = $_GET["bookID"];
+            echo"$bookID";?>"> 
+            
+            <p><textarea id = "commentReview" name = "commentReview" rows ="10" cols = "100" placeholder="Type in your review here"></textarea></p>
             <p><input type = "submit" value = "Submit"/></p>
         </form>
 

@@ -1,4 +1,5 @@
 <?php
+// Made by Batrisyai and Jycko
 session_start();
 require_once("../db_connect.php");
 
@@ -8,17 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-if (!isset($_GET['bookID'])) {
-    header("Location:../bookdetails.php"); // Redirect if bookID parameter is missing
+if (!isset($_POST['bookID'])) {
+    header("Location:../searchbooks.php"); // Redirect if bookID parameter is missing
     exit;
 }
+$connection = openConnection();
 
-$bookID = $_GET['bookID'];
-$sql = "SELECT * FROM books WHERE BookID = $bookID";
-$result = mysqli_query($connection, $sql);
-$row = mysqli_fetch_assoc($result);
-$bookID = $row['BookID'];
-
+$bookID = $_POST['bookID'];
 $commentReview = mysqli_real_escape_string($conn, $_POST["commentReview"]);
 
 
@@ -27,13 +24,20 @@ if (empty($userid)) {
     header("Location: ../login.php?message=notloggedin");
     exit;
 }
+echo "'$bookID' '$userid' '$commentReview'";
 
 $query =
     "INSERT INTO review
- (ReviewID, StudentID, BookID, CommentReview, ReviewDate)
+ (StudentID, BookID, CommentReview, ReviewDate)
   VALUES 
-  ('$reviewID', '$userid', '$bookID', '$commentReview', '$reviewDate')"
+  ('$userid', '$bookID', '$commentReview', NOW())"
   ;
-$insert = mysqli_query($conn, $query);
+$insert = mysqli_query($connection, $query);
+
+if (!$insert) {
+    header("Location: ../reviewbooks.php?bookID=$bookID&message=errorsql");
+    exit;
+}
+header("Location: ../reviewbooks.php?bookID=$bookID&message=success");
 
 ?>
